@@ -8,9 +8,36 @@
 	width: 80%
 }	
 
+textarea{
+	resize:none;
+}
+
 .h {
 	font-weight: 600;
 }
+
+
+
+table {
+  border-collapse: collapse;
+}
+table td {
+  border: 1px solid black; 
+  padding: 0px 4px;
+}
+table tr:first-child td {
+  border-top: 0;
+}
+table tr td:first-child {
+  border-left: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:last-child {
+  border-right: 0;
+}
+
 
 </style>
 </head>
@@ -20,6 +47,7 @@
 
 	<textarea id="input"></textarea>
 
+<br>
 
 	<table>
 	<tr class="h">
@@ -38,37 +66,46 @@
 		<td id="c2"></td>
 	</tr>
 	</table>
-
+	<br>
 
 
 	<table>
 	<tr class="h">
+		<td>a</td>
+		<td>b</td>
 		<td>a2</td>
 		<td>b2</td>
 		<td>a2+b2</td>
-		<td>sqrt(a2+b2)</td>
+		<td>c = sqrt(a2+b2)</td>
 	</tr>
 	<tr>
+		<td id="i1"></td>
+		<td id="i2"></td>
 		<td id="s1"></td>
 		<td id="s2"></td>
 		<td id="s3"></td>
-		<td id="s4"></td>
+		<td id="s4" class="h"></td>
 	</tr>
 	</table>
 
+<br>
 
 	<table>
 	<tr class="h">
+		<td>c</td>
+		<td>b</td>
 		<td>c2</td>
 		<td>b2</td>
 		<td>c2-b2</td>
-		<td>sqrt(c2-b2)</td>
+		<td>a = sqrt(c2-b2)</td>
 	</tr>
 	<tr>
+		<td id="i3"></td>
+		<td id="i4"></td>
 		<td id="d1"></td>
 		<td id="d2"></td>
 		<td id="d3"></td>
-		<td id="d4"></td>
+		<td id="d4" class="h"></td>
 	</tr>
 	</table>
 
@@ -90,6 +127,11 @@
 	var d2 = document.getElementById("d2")
 	var d3 = document.getElementById("d3")
 	var d4 = document.getElementById("d4")
+	var i1 = document.getElementById("i1")
+	var i2 = document.getElementById("i2")
+	var i3 = document.getElementById("i3")
+	var i4 = document.getElementById("i4")
+
 
 	function ab(a,b){
 		var aa = parseFloat(a)
@@ -128,6 +170,8 @@
 			var a = parseFloat(input_string[0])
 			var b = parseFloat(input_string[1])
 
+			i1.innerHTML = a
+			i2.innerHTML = b
 			s1.innerHTML = Math.pow(a,2)
 			s2.innerHTML = Math.pow(b,2)
 			s3.innerHTML = Math.pow(a,2) + Math.pow(b,2)
@@ -144,6 +188,8 @@
 			var b = parseFloat(input_string[0])
 			var c = parseFloat(input_string[1])
 
+			i3.innerHTML = c
+			i4.innerHTML = b
 			d1.innerHTML = Math.pow(c,2)
 			d2.innerHTML = Math.pow(b,2)
 			d3.innerHTML = Math.pow(c,2) - Math.pow(b,2)
