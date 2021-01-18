@@ -7,6 +7,10 @@
 	width: 80%
 }	
 
+.h {
+	font-weight: 600;
+}
+
 </style>
 </head>
 <body>
@@ -17,7 +21,7 @@
 
 
 	<table>
-	<tr>
+	<tr class="h">
 		<td>a</td>
 		<td>b</td>
 		<td>c</td>
@@ -32,7 +36,40 @@
 		<td id="b2"></td>
 		<td id="c2"></td>
 	</tr>
-</table>
+	</table>
+
+
+
+	<table>
+	<tr class="h">
+		<td>a2</td>
+		<td>b2</td>
+		<td>a2+b2</td>
+		<td>sqrt(a2+b2)</td>
+	</tr>
+	<tr>
+		<td id="s1"></td>
+		<td id="s2"></td>
+		<td id="s3"></td>
+		<td id="s4"></td>
+	</tr>
+	</table>
+
+
+	<table>
+	<tr class="h">
+		<td>c2</td>
+		<td>b2</td>
+		<td>c2-b2</td>
+		<td>sqrt(c2-b2)</td>
+	</tr>
+	<tr>
+		<td id="d1"></td>
+		<td id="d2"></td>
+		<td id="d3"></td>
+		<td id="d4"></td>
+	</tr>
+	</table>
 
 
 </body>
@@ -44,6 +81,14 @@
 	var a2 = document.getElementById("a2")
 	var b2 = document.getElementById("b2")
 	var c2 = document.getElementById("c2")
+	var s1 = document.getElementById("s1")
+	var s2 = document.getElementById("s2")
+	var s3 = document.getElementById("s3")
+	var s4 = document.getElementById("s4")
+	var d1 = document.getElementById("d1")
+	var d2 = document.getElementById("d2")
+	var d3 = document.getElementById("d3")
+	var d4 = document.getElementById("d4")
 
 	function ab(a,b){
 		var aa = parseFloat(a)
@@ -79,6 +124,14 @@
 			b1.innerHTML = input_string[1]
 			c1.innerHTML = ab(input_string[0],input_string[1])
 
+			var a = parseFloat(input_string[0])
+			var b = parseFloat(input_string[1])
+
+			s1.innerHTML = Math.pow(a,2)
+			s2.innerHTML = Math.pow(b,2)
+			s3.innerHTML = Math.pow(a,2) + Math.pow(b,2)
+			s4.innerHTML = Math.sqrt(Math.pow(a,2) + Math.pow(b,2))
+
 
 			console.log(cb(input_string[1],input_string[0]))
 
@@ -86,6 +139,14 @@
 			b2.innerHTML = input_string[0]
 			c2.innerHTML = input_string[1]
 			a2.innerHTML = cb(input_string[1],input_string[0])
+
+			var b = parseFloat(input_string[0])
+			var c = parseFloat(input_string[1])
+
+			d1.innerHTML = Math.pow(c,2)
+			d2.innerHTML = Math.pow(b,2)
+			d3.innerHTML = Math.pow(c,2) - Math.pow(b,2)
+			d4.innerHTML = Math.sqrt(Math.pow(c,2) - Math.pow(b,2))
 
 
 		}
